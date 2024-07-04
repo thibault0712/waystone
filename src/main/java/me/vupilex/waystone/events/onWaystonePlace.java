@@ -36,7 +36,7 @@ public class onWaystonePlace implements Listener {
                 ArmorStand as = (ArmorStand) location.getWorld().spawnEntity(asLocation, EntityType.ARMOR_STAND);
                 as.setGravity(false);
                 as.setCanPickupItems(false);
-                as.setCustomName(Main.getInstance().getConfig().getString("Default-waystone-name"));
+                as.setCustomName(Main.getInstance().getConfigLang.getString("Default-waystone-name"));
                 as.setCustomNameVisible(true);
                 as.setVisible(false);
                 CustomConfig.get().set(waystoneID + ".armorStand", as.getUniqueId().toString());
@@ -48,9 +48,9 @@ public class onWaystonePlace implements Listener {
             CustomConfig.get().set(waystoneID + ".players", Arrays.asList(player.getUniqueId().toString()));
             CustomConfig.get().set(waystoneID + ".playersName", Arrays.asList(player.getDisplayName()));
             CustomConfig.get().set(waystoneID + ".item", defaultItem);
-            CustomConfig.get().set(waystoneID + ".title", Main.getInstance().getConfig().getString("Default-waystone-name"));
+            CustomConfig.get().set(waystoneID + ".title", Main.getInstance().getConfigLang.getString("Default-waystone-name"));
             CustomConfig.save();
-            player.sendMessage(Main.getInstance().getConfig().getString("Place-Waystone"));
+            player.sendMessage(Main.getInstance().getConfigLang.getString("Place-Waystone"));
             player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
         }
     }

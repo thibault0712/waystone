@@ -28,10 +28,10 @@ public class onGUIPlayerTeleportationRequestInteract implements Listener {
         if (event.getCurrentItem() == null) return;
         Player player = (Player) event.getWhoClicked();
         String inventoryName = event.getView().getTitle();
-        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-player-teleportation-request-title"))){
+        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-player-teleportation-request-title"))){
             ItemStack itemStack = event.getCurrentItem();
             event.setCancelled(true);
-            if(itemStack.getType().equals(Material.PLAYER_HEAD) && !itemStack.getItemMeta().getDisplayName().equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-waystone-teleport-players"))){
+            if(itemStack.getType().equals(Material.PLAYER_HEAD) && !itemStack.getItemMeta().getDisplayName().equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-waystone-teleport-players"))){
                 SkullMeta skullMeta = (SkullMeta) itemStack.getItemMeta();
                 Player playerToTeleport = skullMeta.getOwningPlayer().getPlayer();
                 if (playerToTeleport.isOnline()){
@@ -55,7 +55,7 @@ public class onGUIPlayerTeleportationRequestInteract implements Listener {
                             }
                         }, 0, 10);
                     }else{
-                        playerToTeleport.sendMessage(Main.getInstance().getConfig().getString("Teleportation-delay").replaceAll("%delay%", String.valueOf(Main.getInstance().getConfig().getInt("Player-teleportation-delay"))));
+                        playerToTeleport.sendMessage(Main.getInstance().getConfigLang.getString("Teleportation-delay").replaceAll("%delay%", String.valueOf(Main.getInstance().getConfig().getInt("Player-teleportation-delay"))));
                         Bukkit.getScheduler().runTaskLater(Main.getInstance(), new Runnable() {
                             @Override
                             public void run() {
@@ -67,10 +67,10 @@ public class onGUIPlayerTeleportationRequestInteract implements Listener {
                     Main.getInstance().playerTeleportationRequest.remove(playerToTeleport, player);
                 }
             }else {
-                if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfig().getString("Gui-waystone-button"))) {
+                if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfigLang.getString("Gui-waystone-button"))) {
                     String key = itemStack.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                     player.openInventory(waystoneGUI.waystoneGUI(player, key, 0));
-                } else if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfig().getString("Gui-waystone-teleport-players"))) {
+                } else if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfigLang.getString("Gui-waystone-teleport-players"))) {
                     String key = itemStack.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                     player.openInventory(playerTeleportationGUI.playerTeleportationGUI(player, key, 0));
                 }

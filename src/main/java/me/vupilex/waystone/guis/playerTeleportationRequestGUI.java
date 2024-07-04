@@ -14,7 +14,7 @@ import java.util.Map;
 public class playerTeleportationRequestGUI {
     public static Inventory playerTeleportationRequestGUI(Player player, String WaystoneClickedKey , int page){
         //On utilise waystoneClickerKey pour le back button sinon on aura pas de retour
-        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfig().getString("Gui-player-teleportation-request-title"));
+        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfigLang.getString("Gui-player-teleportation-request-title"));
         int slotPosition = 0;
         int keyPosition = 0;
         if (page > 0){

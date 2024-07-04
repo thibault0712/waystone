@@ -23,7 +23,7 @@ public class onGUIPlayerTeleportationInteract implements Listener {
         if (event.getCurrentItem() == null) return;
         Player player = (Player) event.getWhoClicked();
         String inventoryName = event.getView().getTitle();
-        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-player-teleportation-title"))){
+        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-player-teleportation-title"))){
             ItemStack itemStack = event.getCurrentItem();
             event.setCancelled(true);
             if(itemStack.getType().equals(Material.PLAYER_HEAD)){
@@ -37,7 +37,7 @@ public class onGUIPlayerTeleportationInteract implements Listener {
                     Player mapReceiver = map.getValue();
                     if (playerReceiver == mapReceiver && mapSender == player) {
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.8f, 1.0f);
-                        player.sendMessage(Main.getInstance().getConfig().getString("Request-already-sended"));
+                        player.sendMessage(Main.getInstance().getConfigLang.getString("Request-already-sended"));
                         return;
                     }
                 }
@@ -45,20 +45,20 @@ public class onGUIPlayerTeleportationInteract implements Listener {
                     player.setLevel(expToLevel - xpCost);
                 } else{
                     player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.8f, 1.0f);
-                    player.sendMessage(Main.getInstance().getConfig().getString("Not-enough-xp-level"));
+                    player.sendMessage(Main.getInstance().getConfigLang.getString("Not-enough-xp-level"));
                     return;
                 }
                 Main.getInstance().playerTeleportationRequest.put(player, playerReceiver);
-                player.sendMessage(Main.getInstance().getConfig().getString("Success-sended-request-teleportation"));
-                playerReceiver.sendMessage(Main.getInstance().getConfig().getString("request-teleportation-receive").replace("%player%", player.getName()));
+                player.sendMessage(Main.getInstance().getConfigLang.getString("Success-sended-request-teleportation"));
+                playerReceiver.sendMessage(Main.getInstance().getConfigLang.getString("request-teleportation-receive").replace("%player%", player.getName()));
                 player.closeInventory();
                 player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
                 playerReceiver.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
             }else {
-                if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfig().getString("Gui-waystone-button"))) {
+                if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfigLang.getString("Gui-waystone-button"))) {
                     String key = itemStack.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                         player.openInventory(waystoneGUI.waystoneGUI(player, key, 0));
-                } else if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfig().getString("Gui-waystone-player-teleportation-request"))) {
+                } else if (itemStack.getItemMeta().getDisplayName().equals(Main.getInstance().getConfigLang.getString("Gui-waystone-player-teleportation-request"))) {
                     String key = itemStack.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                     player.openInventory(playerTeleportationRequestGUI.playerTeleportationRequestGUI(player, key, 0));
                 }

@@ -24,13 +24,24 @@ public class onGUIObstruatedLocationInterract implements Listener {
         if (event.getCurrentItem() == null) return;
         Player player = (Player) event.getWhoClicked();
         String inventoryName = event.getView().getTitle();
-        String acceptDisplayName = Main.getInstance().getConfig().getString("Gui-obstruated-location-accept");
-        String denyDisplayName = Main.getInstance().getConfig().getString("Gui-obstruated-location-deny");
-        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-obstruated-location-title"))){
+        String acceptDisplayName = Main.getInstance().getConfigLang.getString("Gui-obstruated-location-accept");
+        String denyDisplayName = Main.getInstance().getConfigLang.getString("Gui-obstruated-location-deny");
+        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-obstruated-location-title"))){
+            player.closeInventory();
             ItemMeta itemMeta = event.getCurrentItem().getItemMeta();
             event.setCancelled(true);
             if (itemMeta.getDisplayName().equals(acceptDisplayName)) {
                 String key = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "waystone-key"), PersistentDataType.STRING);
+                int expToLevel = player.getLevel();
+                int xpCost = Main.getInstance().getConfig().getInt("XP-level-teleportation-waystone-cost");
+                player.closeInventory();
+                if (expToLevel >= xpCost) {
+                    player.setLevel(expToLevel - xpCost);
+                } else{
+                    player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.8f, 1.0f);
+                    player.sendMessage(Main.getInstance().getConfigLang.getString("Not-enough-xp-level"));
+                    return;
+                }
                 if (key == null) return;
                 Location waystoneLocation = CustomConfig.get().getLocation(key + ".location");
                 Location teleportationLocation = new Location(waystoneLocation.getWorld(), waystoneLocation.getX() + 0.5, waystoneLocation.getY() + 1, waystoneLocation.getZ() + 0.5);

@@ -14,7 +14,7 @@ public class onPlayerCancelRenameWaystoneAction implements Listener {
         if (player.isSneaking() && Main.getInstance().playerForRenameWaystone.containsKey(player)) {
             Main.getInstance().playerForRenameWaystone.remove(player);
             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_PLACE, 1.0f, 1.0f);
-            player.sendMessage(Main.getInstance().getConfig().getString("Waystone-cancel-rename"));
+            player.sendMessage(Main.getInstance().getConfigLang.getString("Waystone-cancel-rename"));
         }
     }
 }

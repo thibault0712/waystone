@@ -20,7 +20,7 @@ public class bottomWaystoneItems {
         ItemStack rename = new ItemStack(Material.SPRUCE_SIGN);
         ItemMeta metaRename = rename.getItemMeta();
         metaRename.setLore(null);
-        metaRename.setDisplayName(Main.getInstance().getConfig().getString("Gui-waystone-rename"));
+        metaRename.setDisplayName(Main.getInstance().getConfigLang.getString("Gui-waystone-rename"));
         metaRename.addEnchant(Enchantment.FIRE_ASPECT, 6, true);
         metaRename.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         metaRename.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING, key);
@@ -32,7 +32,7 @@ public class bottomWaystoneItems {
     public static ItemStack removePlayerAccessItem(String key){
         ItemStack barrier = new ItemStack(Material.BARRIER);
         ItemMeta metaBarrier = barrier.getItemMeta();
-        metaBarrier.setDisplayName(Main.getInstance().getConfig().getString("Gui-waystone-remove-access-players"));
+        metaBarrier.setDisplayName(Main.getInstance().getConfigLang.getString("Gui-waystone-remove-access-players"));
         metaBarrier.setLore(null);
         metaBarrier.addEnchant(Enchantment.FIRE_ASPECT, 5, true);
         metaBarrier.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -44,11 +44,11 @@ public class bottomWaystoneItems {
 
     public static ItemStack waystoneInformationItem(String WaystoneClickedKey){
         List<String> lore = new ArrayList<>();
-        lore.add(Main.getInstance().getConfig().getString("Gui-waystone-owner-prefix") + CustomConfig.get().getString(WaystoneClickedKey + ".ownerName"));
-        lore.add(Main.getInstance().getConfig().getString("Gui-waystone-players-list-prefix"));
+        lore.add(Main.getInstance().getConfigLang.getString("Gui-waystone-owner-prefix") + CustomConfig.get().getString(WaystoneClickedKey + ".ownerName"));
+        lore.add(Main.getInstance().getConfigLang.getString("Gui-waystone-players-list-prefix"));
         List<String> playerList = CustomConfig.get().getStringList(WaystoneClickedKey + ".playersName");
         for (String pseudo : playerList) {
-            lore.add(Main.getInstance().getConfig().getString("Gui-waystone-player-prefix") + pseudo);
+            lore.add(Main.getInstance().getConfigLang.getString("Gui-waystone-player-prefix") + pseudo);
         }
 
         ItemStack waystoneInfo =  CustomConfig.get().getItemStack(WaystoneClickedKey + ".item");

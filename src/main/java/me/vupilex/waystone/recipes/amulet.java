@@ -18,8 +18,8 @@ public class amulet{
     public static ItemStack amuletItem(JavaPlugin javaPlugin){
         ItemStack amulet = new ItemStack(Material.RECOVERY_COMPASS, 1);
         ItemMeta amuletMeta = amulet.getItemMeta();
-        amuletMeta.setLore(javaPlugin.getConfig().getStringList("Amulet-lore"));
-        amuletMeta.setDisplayName(javaPlugin.getConfig().getString("Amulet-name"));
+        amuletMeta.setLore(Main.getInstance().getConfigLang.getStringList("Amulet-lore"));
+        amuletMeta.setDisplayName(Main.getInstance().getConfigLang.getString("Amulet-name"));
         amuletMeta.addEnchant(Enchantment.ARROW_DAMAGE, 50, true);
         amuletMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         amuletMeta.getPersistentDataContainer().set(new NamespacedKey(javaPlugin, "amulet_of_teleportation"), PersistentDataType.BYTE, (byte) 1);

@@ -57,7 +57,7 @@ public class onPlayerInteractArmorStand implements Listener {
                         CustomConfig.get().set(key + ".players", playersWaystone);
                         CustomConfig.get().set(key + ".playersName", playersNameWaystone);
                         CustomConfig.save();
-                        player.sendMessage(Objects.requireNonNull(Main.getInstance().getConfig().getString("Waystone-found")));
+                        player.sendMessage(Objects.requireNonNull(Main.getInstance().getConfigLang.getString("Waystone-found")));
                         player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
                         Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> particlesFireworks.particlesFireworks(armorStandLocation, player, Main.getInstance()).detonate(), 5);
                     }

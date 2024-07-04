@@ -1,11 +1,11 @@
-# ╔═════════════════════════════════════════════════════════════════════════════════╗
-# ║     ██╗    ██╗ █████╗ ██╗   ██╗███████╗████████╗ ██████╗ ███╗   ██╗███████╗     ║
-# ║     ██║    ██║██╔══██╗╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝     ║
-# ║     ██║ █╗ ██║███████║ ╚████╔╝ ███████╗   ██║   ██║   ██║██╔██╗ ██║█████╗       ║
-# ║     ██║███╗██║██╔══██║  ╚██╔╝  ╚════██║   ██║   ██║   ██║██║╚██╗██║██╔══╝       ║
-# ║     ╚███╔███╔╝██║  ██║   ██║   ███████║   ██║   ╚██████╔╝██║ ╚████║███████╗     ║
-# ║      ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝     ║
-# ╚═════════════════════════════════════════════════════════════════════════════════╝
+# ╔═══════════════════════════════════════════════════════════════════════════════════════════╗
+# ║  ██████╗ ███╗   ███╗██╗   ██╗██╗     ███████╗████████╗ ██████╗  █████╗ ████████╗███████╗  ║
+# ║  ██╔══██╗████╗ ████║██║   ██║██║     ██╔════╝╚══██╔══╝██╔════╝ ██╔══██╗╚══██╔══╝██╔════╝  ║
+# ║  ███████║██╔████╔██║██║   ██║██║     █████╗     ██║   ██║  ███╗███████║   ██║   █████╗    ║
+# ║  ██╔══██║██║╚██╔╝██║██║   ██║██║     ██╔══╝     ██║   ██║   ██║██╔══██║   ██║   ██╔══╝    ║
+# ║  ██║  ██║██║ ╚═╝ ██║╚██████╔╝███████╗███████╗   ██║   ╚██████╔╝██║  ██║   ██║   ███████╗  ║
+# ║  ╚═╝  ╚═╝╚═╝     ╚══ ╚═════╝ ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝  ║
+# ╚═══════════════════════════════════════════════════════════════════════════════════════════╝
 #
 #
 # Plugin made by Vupilex
@@ -22,102 +22,10 @@ Enable-teleportation-animation: true
 #The delay will apply if the teleportation animation is disabled. Delay in seconds
 Player-teleportation-delay: 3
 Enable-the-teleportation-between-players: true
-#Any hologram created before the parameter change will not update. To refresh it, modify the waystone's title.
+#Any hologram created before the parameter change will not update. To refresh it, modify the waystone title.
 Enable-hologram-title: true
 XP-level-teleportation-waystone-cost: 3
 #The xp is removed when player send request
 XP-level-teleportation-between-players-cost: 3
-#
-#
-#   ╔═════════════════════╗
-#   ║                     ║
-#   ║      LANGUAGE       ║
-#   ║                     ║
-#   ╚═════════════════════╝
-# A French version is available: https://hastebin.com/share/dugogajexe.makefile
-#=============================
-#|        MESSAGES         |
-#=============================
-Not-Owner: "§l§8[§4x§8]§r§c you are not the owner of this waystone"
-Request-already-sended: "§l§8[§4x§8]§r§c you have already sent a teleportation request to %player%"
-Place-Waystone: "§l§8[§2✓§8]§r§a Waystone set successfully!"
-Waystone-found: "§l§8[§2✓§8]§r§a Waystone saved successfully"
-Change-waystone-icon: "§l§8[§2✓§8]§r§a Icon changed successfully"
-Success-expulse-player: "§l§8[§2✓§8]§r§a Player successfully expelled!"
-Success-change-title: "§l§8[§2✓§8]§r§a Waystone renamed successfully!"
-Success-sended-request-teleportation: "§l§8[§2✓§8]§r§a Request sent successfully!"
-request-teleportation-receive: "§l§8[§6 ! §8]§r§6§l %player% §r§6wants to teleport to you, to accept, go to the teleport request menu available with the amulet or a waystone"
-Waystone-give-name: "§l§8[§6 ! §8]§r§6To name the waystone, enter its name in the chat. The text will not be visible to other players. To cancel renaming, crouch."
-Waystone-cancel-rename: "§l§8[§4x§8]§r§c Action canceled!"
-Teleportation-delay: "§l§8[§6 ! §8]§r§6§l Teleportation will occur in %delay%s"
-Not-enough-xp-level: "§l§8[§4x§8]§r§c You must have at least 3 levels of XP to teleport"
-#
-#=============================
-#|     GUI GLOBAL BUTTONS   |
-#=============================
-Gui-waystone-teleport-players: "§2§lTeleport to players"
-Gui-waystone-player-teleportation-request: "§2§lTeleportation request"
-Gui-waystone-player-teleportation: "§2§lTeleport to a player"
-Gui-waystone-button: "§2§lTeleport to a waystone"
-Gui-back-button: "§4Back"
-Gui-next-page: "§2§lNext page"
-Gui-previous-page: "§2§lPrevious page"
-#
-#==================================
-#|         GUI WAYSTONE          |
-#==================================
-Gui-waystone-title: "§6§lWaystones"
-Gui-waystone-rename: "§2§lRename the Waystone"
-Gui-waystone-remove-access-players: "§2§lRemove access to a player"
-Gui-waystone-remove-access-players-title: "§l§4Remove a player"
-Gui-waystone-remove-player-access-left-click-to-expulse:
-  - "§8§l+---------------------------------+"
-  - "§c§l  Left click to expel"
-  - "§8§l+---------------------------------+"
-Gui-waystone-owner-prefix: "§3§lOwner:§r§3"
-Gui-waystone-location-prefix: "§3§lLocation:§r§3"
-Gui-waystone-players-list-prefix: "§3§lPlayers with access: "
-Gui-waystone-player-prefix: "§3   - "
-Gui-rename-waystone-title: "§6§lRename the waystone"
-Gui-rename-waystone-define-title: "§9§lwaystone title"
-Default-waystone-name: "Unnamed Waystone"
-#
-#===================================
-#|          OTHERS GUI            |
-#===================================
-Gui-player-teleportation-title: "§6§lTeleport to a player"
-Gui-player-teleportation-request-title: "§6§lTeleportation request"
-Gui-obstruated-location-title: "§4§lDangerous teleportation"
-Gui-obstruated-location-explanation-lore:
-  - "§8§l+---------------------------------------------+"
-  - "§cThis waystone is obstructed, are you sure you"
-  - "§cwant to go there?"
-  - "§8§l+---------------------------------------------+"
-Gui-obstruated-location-accept: "§2§lGo there anyway"
-Gui-obstruated-location-deny: "§4§lDo not go there"
-Gui-obstruated-location-explanation-title: "§4§lDangerous teleportation"
-#
-#==================================
-#|       ITEMS CUSTOMIZATION      |
-#==================================
-Amulet-lore:
-  - "§8§l+---------------------------------------------+"
-  - "§6The Amulet is an artifact for instantaneous"
-  - "§6teleportations between players or waystones."
-  - "§6To teleport between players, make sure both"
-  - "§6players have an amulet."
-  - "§6To teleport to a waystone, record it by right-clicking"
-  - "§6on it or placing a waystone."
-  - "§6The Amulet absorbs your experience with each"
-  - "§6teleportation made."
-  - "§8§l+---------------------------------------------+"
-Amulet-name: "§r§fTeleportation Amulet"
-Waystone-lore:
-  - "§8§l+---------------------------------------------+"
-  - "§6The Waystone is a mystical portal to travel"
-  - "§6between different regions of the world instantly."
-  - "§6Place the Waystone to add it to your list of"
-  - "§6instantly accessible destinations or right-click"
-  - "§6on it to add it."
-  - "§8§l+---------------------------------------------+"
-Waystone-name: "§r§fWaystone"
+#Translation available English and French (EN | FR)
+lang: "EN"

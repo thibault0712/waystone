@@ -21,7 +21,7 @@ import java.util.UUID;
 
 public class removePlayerWaystoneAccessGUI {
     public static Inventory removePlayerWaystoneAccessGUI(String key, int page){
-        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfig().getString("Gui-waystone-remove-access-players-title"));
+        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfigLang.getString("Gui-waystone-remove-access-players-title"));
         int slotPosition = 0;
         if (page > 0){
             inventory.setItem(36, globalItems.previousPage(key, page - 1));
@@ -43,7 +43,7 @@ public class removePlayerWaystoneAccessGUI {
                     headMeta.setDisplayName("§l§6" + playerName);
                     headMeta.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "waystone-key"), PersistentDataType.STRING, key);
                     headMeta.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "player-uuid"), PersistentDataType.STRING, uuid);
-                    headMeta.setLore(Main.getInstance().getConfig().getStringList("Gui-waystone-remove-player-access-left-click-to-expulse"));
+                    headMeta.setLore(Main.getInstance().getConfigLang.getStringList("Gui-waystone-remove-player-access-left-click-to-expulse"));
                     head.setItemMeta(headMeta);
                     inventory.setItem(slotPosition, head); //-1 car on retire le propriétaire
                 }

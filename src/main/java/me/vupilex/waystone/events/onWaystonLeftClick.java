@@ -42,9 +42,9 @@ public class onWaystonLeftClick implements Listener {
                             CustomConfig.save();
                             player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
                             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> particlesFireworks.particlesFireworks(blockLocation, player, Main.getInstance()).detonate(), 5);
-                            player.sendMessage(Main.getInstance().getConfig().getString("Change-waystone-icon"));
+                            player.sendMessage(Main.getInstance().getConfigLang.getString("Change-waystone-icon"));
                         }else{
-                            player.sendMessage(Main.getInstance().getConfig().getString("Not-Owner"));
+                            player.sendMessage(Main.getInstance().getConfigLang.getString("Not-Owner"));
                             player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.8f, 1.0f);
                         }
                         break;

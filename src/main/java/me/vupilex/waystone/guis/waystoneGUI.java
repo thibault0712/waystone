@@ -21,7 +21,7 @@ import java.util.UUID;
 
 public class waystoneGUI {
     public static Inventory waystoneGUI(Player player, String WaystoneClickedKey, int page){
-        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfig().getString("Gui-waystone-title"));
+        Inventory inventory = Bukkit.createInventory(null, 54, Main.getInstance().getConfigLang.getString("Gui-waystone-title"));
         int slotPosition = 0;
         int keyPosition = 0;
         if (page > 0){
@@ -50,8 +50,8 @@ public class waystoneGUI {
                     ItemMeta waystoneMeta = waystoneItem.getItemMeta();
                     waystoneMeta.setDisplayName("§6§l" + CustomConfig.get().getString(key + ".title"));
                     waystoneMeta.setLore(Arrays.asList(
-                            Main.getInstance().getConfig().getString("Gui-waystone-owner-prefix") + ownerName,
-                            Main.getInstance().getConfig().getString("Gui-waystone-location-prefix") + "x : " + waystoneLocation.getX() + ", y : " + waystoneLocation.getY() + ", z : " + waystoneLocation.getZ()));
+                            Main.getInstance().getConfigLang.getString("Gui-waystone-owner-prefix") + ownerName,
+                            Main.getInstance().getConfigLang.getString("Gui-waystone-location-prefix") + "x : " + waystoneLocation.getX() + ", y : " + waystoneLocation.getY() + ", z : " + waystoneLocation.getZ()));
                     waystoneMeta.addEnchant(Enchantment.ARROW_DAMAGE, 50, true);
                     waystoneMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                     waystoneMeta.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "waystone-key"), PersistentDataType.STRING, key);

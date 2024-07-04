@@ -28,7 +28,7 @@ public class onGUIRemovePlayerAccess implements Listener {
         if (event.getCurrentItem() == null) return;
         Player player = (Player) event.getWhoClicked();
         String inventoryName = event.getView().getTitle();
-        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-waystone-remove-access-players-title"))){
+        if (inventoryName.equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-waystone-remove-access-players-title"))){
             event.setCancelled(true);
             ItemMeta itemMeta = event.getCurrentItem().getItemMeta();
             String waystoneKey = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "waystone-key"), PersistentDataType.STRING);
@@ -44,19 +44,19 @@ public class onGUIRemovePlayerAccess implements Listener {
                         CustomConfig.get().set(waystoneKey + ".players", playersWaystone);
                         CustomConfig.get().set(waystoneKey + ".playersName", playersNameWaystone);
                         CustomConfig.save();
-                        player.sendMessage(Main.getInstance().getConfig().getString("Success-expulse-player"));
+                        player.sendMessage(Main.getInstance().getConfigLang.getString("Success-expulse-player"));
                         player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_PLACE, 1f, 1.0f);
                         player.openInventory(removePlayerWaystoneAccessGUI.removePlayerWaystoneAccessGUI(waystoneKey, 0));
                     }
                 }
-            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-back-button"))) {
+            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-back-button"))) {
                 String key = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                 player.openInventory(waystoneGUI.waystoneGUI(player, key, 0));
-            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-next-page"))) {
+            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-next-page"))) {
                 String keyInWaystone = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                 Integer page = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "next-page"), PersistentDataType.INTEGER);
                 player.openInventory(removePlayerWaystoneAccessGUI.removePlayerWaystoneAccessGUI(keyInWaystone, page));
-            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfig().getString("Gui-previous-page"))) {
+            } else if (itemMeta.getDisplayName().equalsIgnoreCase(Main.getInstance().getConfigLang.getString("Gui-previous-page"))) {
                 String keyInWaystone = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "key-in-waystone"), PersistentDataType.STRING);
                 Integer page = itemMeta.getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "previous-page"), PersistentDataType.INTEGER);
                 player.openInventory(removePlayerWaystoneAccessGUI.removePlayerWaystoneAccessGUI(keyInWaystone, page));

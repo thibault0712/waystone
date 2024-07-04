@@ -35,13 +35,13 @@ public class onWaystoneBreak implements Listener {
                             if (Main.getInstance().playerForRenameWaystone.get(player).equalsIgnoreCase(key)){
                                 Main.getInstance().playerForRenameWaystone.remove(player);
                                 player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_PLACE, 1.0f, 1.0f);
-                                player.sendMessage(Main.getInstance().getConfig().getString("Waystone-cancel-rename"));
+                                player.sendMessage(Main.getInstance().getConfigLang.getString("Waystone-cancel-rename"));
                             }
                         }
                         CustomConfig.get().set(key, null);
                         CustomConfig.save();
                     }else{
-                        player.sendMessage(Main.getInstance().getConfig().getString("Not-Owner"));
+                        player.sendMessage(Main.getInstance().getConfigLang.getString("Not-Owner"));
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.8f, 1.0f);
                         event.setCancelled(true);
                         blockLocation.getWorld().spawnParticle(Particle.REDSTONE, blockLocation.add(0.5, 1.2, 0.5), 20, 0.0, 0.5, 0.0, new Particle.DustOptions(Color.GRAY, 1));

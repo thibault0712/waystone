@@ -11,25 +11,25 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class obstruatedLocationGUI {
     public static Inventory obstruatedLocationGUI(String WaystoneClickedKey){
-        Inventory inventory = Bukkit.createInventory(null, 27, Main.getInstance().getConfig().getString("Gui-obstruated-location-title"));
+        Inventory inventory = Bukkit.createInventory(null, 27, Main.getInstance().getConfigLang.getString("Gui-obstruated-location-title"));
 
         ItemStack accept = new ItemStack(Material.GREEN_WOOL);
         ItemMeta acceptMeta = accept.getItemMeta();
-        acceptMeta.setDisplayName(Main.getInstance().getConfig().getString("Gui-obstruated-location-accept"));
+        acceptMeta.setDisplayName(Main.getInstance().getConfigLang.getString("Gui-obstruated-location-accept"));
         acceptMeta.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "waystone-key"), PersistentDataType.STRING, WaystoneClickedKey);
         acceptMeta.setLore(null);
         accept.setItemMeta(acceptMeta);
 
         ItemStack deny = new ItemStack(Material.RED_WOOL);
         ItemMeta denyMeta = deny.getItemMeta();
-        denyMeta.setDisplayName(Main.getInstance().getConfig().getString("Gui-obstruated-location-deny"));
+        denyMeta.setDisplayName(Main.getInstance().getConfigLang.getString("Gui-obstruated-location-deny"));
         denyMeta.setLore(null);
         deny.setItemMeta(denyMeta);
 
         ItemStack explanation = new ItemStack(Material.NAME_TAG);
         ItemMeta explanationMeta = explanation.getItemMeta();
-        explanationMeta.setDisplayName(Main.getInstance().getConfig().getString("Gui-obstruated-location-explanation-title"));
-        explanationMeta.setLore(Main.getInstance().getConfig().getStringList("Gui-obstruated-location-explanation-lore"));
+        explanationMeta.setDisplayName(Main.getInstance().getConfigLang.getString("Gui-obstruated-location-explanation-title"));
+        explanationMeta.setLore(Main.getInstance().getConfigLang.getStringList("Gui-obstruated-location-explanation-lore"));
         explanation.setItemMeta(explanationMeta);
 
         inventory.setItem(12, deny);

@@ -18,8 +18,8 @@ public class waystone {
         ItemMeta waystoneMeta = waystone.getItemMeta();
         waystoneMeta.addEnchant(Enchantment.ARROW_DAMAGE, 50, true);
         waystoneMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        waystoneMeta.setLore(javaPlugin.getConfig().getStringList("Waystone-lore"));
-        waystoneMeta.setDisplayName(javaPlugin.getConfig().getString("Waystone-name"));
+        waystoneMeta.setLore(Main.getInstance().getConfigLang.getStringList("Waystone-lore"));
+        waystoneMeta.setDisplayName(Main.getInstance().getConfigLang.getString("Waystone-name"));
         waystoneMeta.getPersistentDataContainer().set(new NamespacedKey(javaPlugin, "waystone"), PersistentDataType.BYTE, (byte) 1);
         waystone.setItemMeta(waystoneMeta);
         return waystone;

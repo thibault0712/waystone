@@ -41,7 +41,7 @@ public class onPlayerRenameWaystone implements Listener {
             CustomConfig.get().set(waystoneKey + ".title", waystoneNewName.replaceAll("&.", ""));
             CustomConfig.save();
             Main.getInstance().playerForRenameWaystone.remove(player);
-            player.sendMessage(Main.getInstance().getConfig().getString("Success-change-title"));
+            player.sendMessage(Main.getInstance().getConfigLang.getString("Success-change-title"));
             player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.8f, 1.0f);
             event.setCancelled(true);
         }
