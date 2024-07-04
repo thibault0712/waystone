@@ -1,8 +1,8 @@
-# A waystone mod like but for spigot
+# ✨A waystone mod like but for spigot✨
 Welcome to waystone, the Minecraft plugin that transforms your teleportation experience Say goodbye to outdated /home and /tpa commands. With waystone, use a magical amulets and a teleportation system inspired by the Waystone mod, all integrated into a simple and intuitive graphical interface with beautifull animations.
 
 
-## Features
+## ✅ Features
 
 - ⚙️ __Highly configurable :__ Customize AmuletGate to fit your server's unique needs. With an extensive configuration file, you can enable or adjust settings and more. For the moment the plugin is translated only in English and French
 - 🛸 __Players teleportation :__ Easily teleport to your friends with a simple click. AmuletGate’s intuitive interface allows you to send and accept teleportation requests, making it easier than ever to meet up and explore together.
@@ -11,7 +11,7 @@ Welcome to waystone, the Minecraft plugin that transforms your teleportation exp
 - ✨ __Beautiful animations :__ Experience teleportation like never before with stunning animations. AmuletGate enhances the visual appeal of teleporting, making each journey an enchanting experience.
 
 
-## Demo
+## 🎬 Demo
 
 
 
@@ -21,9 +21,14 @@ Welcome to waystone, the Minecraft plugin that transforms your teleportation exp
 |![craft_waystone](readmeAssets/example_animation.gif)|![craft_amulette](readmeAssets/example_rename.gif)| ![craft_amulette](readmeAssets/example_teleportation.gif)
 
 __Note :__ This plugin also allows teleportation between players but is not shown in the examples
-## Crafts
+## 🛠️ Crafts
 | Waystone      |  Amulet |
 | :--:  | :--: |
 |![craft_waystone](readmeAssets/waystone_craft.png)|![craft_amulette](readmeAssets/amulette_craft.png)|
+
+
+
+## ⬇️ Download
+The plugin is downloadable [here](https://github.com/thibault0712/waystone/releases/tag/Release)
 
 
